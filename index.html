@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<!-- saved from url=(0067)file:///C:/Users/midhu/Downloads/mridul-portfolio-website.html#work -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Mridul Madhu — UI/UX Designer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="./Mridul Madhu — UI_UX Designer_files/css2" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 
 <style>
 /* ═══════════════════════════════════════════════════════════
@@ -181,12 +181,13 @@ nav.scrolled {
 
 /* ── HERO ────────────────────────────────────────────────── */
 #hero {
+  min-height: 100vh;
   min-height: 100svh;
   background: var(--dark);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 0 var(--pad-x) 72px;
+  padding: calc(var(--nav-h) + 48px) var(--pad-x) 72px;
   position: relative;
   overflow: hidden;
 }
@@ -1061,18 +1062,18 @@ footer {
 <body>
 
 <!-- CUSTOM CURSOR -->
-<div class="cursor" id="cursor" style="left: 689px; top: 114px;"></div>
-<div class="cursor-dot" id="cursorDot" style="left: 689px; top: 114px;"></div>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursorDot"></div>
 
 <!-- ══════════ NAV ══════════ -->
-<nav id="navbar" class="scrolled">
+<nav id="navbar">
   <div class="nav-inner">
     <div class="nav-logo">Mridul<span>.</span></div>
     <div class="nav-links">
-      <a href="file:///C:/Users/midhu/Downloads/mridul-portfolio-website.html#work" class="nav-link">Work</a>
-      <a href="file:///C:/Users/midhu/Downloads/mridul-portfolio-website.html#about" class="nav-link">About</a>
-      <a href="file:///C:/Users/midhu/Downloads/mridul-portfolio-website.html#experience" class="nav-link">Experience</a>
-      <a href="file:///C:/Users/midhu/Downloads/mridul-portfolio-website.html#contact" class="nav-link">Contact</a>
+      <a href="#work"       class="nav-link">Work</a>
+      <a href="#about"      class="nav-link">About</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#contact"    class="nav-link">Contact</a>
     </div>
     <div class="nav-avail">Available for roles</div>
   </div>
@@ -1102,7 +1103,7 @@ footer {
 
     <h1 class="hero-title">
       Designing with<br>
-      <em>Purpose</em> &amp;<br>
+      <em>Purpose</em> &<br>
       Precision.
     </h1>
 
@@ -1111,8 +1112,8 @@ footer {
     </p>
 
     <div class="hero-actions">
-      <a href="file:///C:/Users/midhu/Downloads/mridul-portfolio-website.html#work" class="btn-primary">View My Work ↓</a>
-      <a href="file:///C:/Users/midhu/Downloads/mridul-portfolio-website.html#contact" class="btn-ghost">Get in Touch</a>
+      <a href="#work" class="btn-primary">View My Work ↓</a>
+      <a href="#contact" class="btn-ghost">Get in Touch</a>
     </div>
   </div>
 
@@ -1126,12 +1127,12 @@ footer {
 <!-- ══════════ WORK / CASE STUDIES ══════════ -->
 <section id="work" class="section" style="padding-left:0;padding-right:0;padding-top:100px;padding-bottom:0;">
   <div style="max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-x);">
-    <div class="work-header reveal visible">
+    <div class="work-header reveal">
       <div class="work-title-group">
         <div class="section-eyebrow" style="color:var(--accent);font-family:var(--font-mono);font-size:10px;letter-spacing:3.5px;text-transform:uppercase;margin-bottom:12px;">Selected Work</div>
         <h2 class="section-title" style="color:var(--text);">Case Studies<em>.</em></h2>
       </div>
-      <a href="file:///C:/Users/midhu/Downloads/mridul-portfolio-website.html#contact" class="view-all">Get in touch</a>
+      <a href="#contact" class="view-all">Get in touch</a>
     </div>
   </div>
 
@@ -1139,7 +1140,7 @@ footer {
   <div style="max-width:var(--max-w);margin:0 auto;">
 
     <!-- 01 — KTET MASTER -->
-    <div class="project-row reveal reveal-delay-1 visible" style="cursor: pointer;">
+    <div class="project-row reveal reveal-delay-1">
       <div class="proj-num"><em>01</em></div>
       <div class="proj-body">
         <div class="proj-tags">
@@ -1160,7 +1161,7 @@ footer {
     </div>
 
     <!-- 02 — AMAZON PRIME -->
-    <div class="project-row reveal reveal-delay-1 visible" style="cursor: pointer;">
+    <div class="project-row reveal reveal-delay-1">
       <div class="proj-num"><em>02</em></div>
       <div class="proj-body">
         <div class="proj-tags">
@@ -1181,7 +1182,7 @@ footer {
     </div>
 
     <!-- 03 — SPROUTS -->
-    <div class="project-row reveal reveal-delay-2 visible" style="cursor: pointer;">
+    <div class="project-row reveal reveal-delay-2">
       <div class="proj-num"><em>03</em></div>
       <div class="proj-body">
         <div class="proj-tags">
@@ -1189,7 +1190,7 @@ footer {
           <span class="proj-tag">Branding</span>
           <span class="proj-tag">Real Client</span>
         </div>
-        <h3 class="proj-title">Sprouts Enterprises — Brand Identity &amp; Website</h3>
+        <h3 class="proj-title">Sprouts Enterprises — Brand Identity & Website</h3>
         <p class="proj-desc">
           Complete visual identity and website for a Kerala irrigation technology company. Designed for farmers as the primary user — radical clarity, minimal navigation, direct quote-request flow. Deliverables included logo, full website, in-store boards, promotional posters and print materials.
         </p>
@@ -1202,7 +1203,7 @@ footer {
     </div>
 
     <!-- 04 — NFT RESEARCH -->
-    <div class="project-row reveal reveal-delay-3 visible" style="border-bottom-width: medium; border-bottom-style: none; border-bottom-color: currentcolor; cursor: pointer;">
+    <div class="project-row reveal reveal-delay-3" style="border-bottom:none;">
       <div class="proj-num"><em>04</em></div>
       <div class="proj-body">
         <div class="proj-tags">
@@ -1210,7 +1211,7 @@ footer {
           <span class="proj-tag">Data Analysis</span>
           <span class="proj-tag">Undergrad Project</span>
         </div>
-        <h3 class="proj-title">NFT Investment — Investor Attitude &amp; Perception Study</h3>
+        <h3 class="proj-title">NFT Investment — Investor Attitude & Perception Study</h3>
         <p class="proj-desc">
           A formal research study into how investors and NFT artists perceive NFTs as a financial instrument. Questionnaire design, primary data collection, statistical analysis and data visualisation. Built the rigorous research instincts that now underpin every UX project.
         </p>
@@ -1230,13 +1231,13 @@ footer {
 <!-- ══════════ ABOUT ══════════ -->
 <section id="about" class="section">
   <div class="section-inner">
-    <div class="section-header reveal visible">
+    <div class="section-header reveal">
       <span class="section-eyebrow">About Me</span>
       <span class="section-count">Kerala, India</span>
     </div>
 
     <div class="about-grid">
-      <div class="about-left reveal visible">
+      <div class="about-left reveal">
         <div class="about-role">UI/UX Designer · Graphic Designer</div>
         <h2 class="about-title">
           Graphic Designer<br>turned<br><em>UX Thinker.</em>
@@ -1253,25 +1254,23 @@ footer {
         <div class="about-links">
           <a href="https://behance.net/mridul_madhu_" target="_blank" class="about-link">Behance ↗</a>
           <a href="https://linkedin.com/in/mridulmadhu" target="_blank" class="about-link">LinkedIn ↗</a>
-          <a href="file:///C:/Users/midhu/Downloads/mridul-portfolio-website.html#contact" class="about-link">mridulmadhu02@gmail.com</a>
+          <a href="#contact" class="about-link">mridulmadhu02@gmail.com</a>
         </div>
       </div>
 
-      <div class="about-right reveal reveal-delay-2 visible">
+      <div class="about-right reveal reveal-delay-2">
         <!-- 
           ✦ FRAMER: Replace this block with an Image component.
             Upload your headshot and set fit mode to "Fill".
         -->
         <div class="about-photo">
-          <div class="photo-placeholder">
-            <div class="photo-placeholder-icon">👤</div>
-            <div class="photo-placeholder-label">Upload your photo here in Framer</div>
-          </div>
+          <img src="mridul.jpg" alt="Mridul Madhu"
+               style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
           <div class="about-photo-accent"></div>
         </div>
         <div class="about-availability">
           <div class="avail-dot"></div>
-          Available for full-time roles &amp; freelance
+          Available for full-time roles & freelance
         </div>
       </div>
     </div>
@@ -1282,18 +1281,18 @@ footer {
 <!-- ══════════ SKILLS ══════════ -->
 <section id="skills" class="section section-dark">
   <div class="section-inner">
-    <div class="section-header reveal visible">
-      <span class="section-eyebrow">Tools &amp; Skills</span>
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Tools & Skills</span>
       <span class="section-count" style="color:rgba(255,255,255,0.2);">Software · Research · Design</span>
     </div>
-    <div style="padding-top:16px;padding-bottom:8px;" class="reveal visible">
+    <div style="padding-top:16px;padding-bottom:8px;" class="reveal">
       <h2 class="section-title" style="color:#fff;">What I Work<br><em>With.</em></h2>
     </div>
 
     <div class="skills-grid">
 
       <!-- Design Tools -->
-      <div class="skill-block reveal visible">
+      <div class="skill-block reveal">
         <div class="skill-cat">Design Tools</div>
         <div class="skill-items">
           <div class="skill-item">
@@ -1316,8 +1315,8 @@ footer {
       </div>
 
       <!-- Production -->
-      <div class="skill-block reveal reveal-delay-1 visible">
-        <div class="skill-cat">Production &amp; Layout</div>
+      <div class="skill-block reveal reveal-delay-1">
+        <div class="skill-cat">Production & Layout</div>
         <div class="skill-items">
           <div class="skill-item">
             <div class="skill-name">Adobe InDesign <span class="skill-level">Proficient</span></div>
@@ -1328,7 +1327,7 @@ footer {
             <div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div>
           </div>
           <div class="skill-item">
-            <div class="skill-name">Branding &amp; Identity <span class="skill-level">Advanced</span></div>
+            <div class="skill-name">Branding & Identity <span class="skill-level">Advanced</span></div>
             <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
           </div>
           <div class="skill-item">
@@ -1339,7 +1338,7 @@ footer {
       </div>
 
       <!-- UX Process -->
-      <div class="skill-block reveal reveal-delay-2 visible">
+      <div class="skill-block reveal reveal-delay-2">
         <div class="skill-cat">UX Process</div>
         <div class="skill-items">
           <div class="skill-item">
@@ -1369,37 +1368,52 @@ footer {
 <!-- ══════════ EXPERIENCE ══════════ -->
 <section id="experience" class="section">
   <div class="section-inner">
-    <div class="section-header reveal visible">
+    <div class="section-header reveal">
       <span class="section-eyebrow">Experience</span>
       <span class="section-count">2023 — Present</span>
     </div>
-    <div style="padding-top:16px;" class="reveal visible">
+    <div style="padding-top:16px;" class="reveal">
       <h2 class="section-title">Where I've<br><em>Worked.</em></h2>
     </div>
 
     <div class="exp-rows">
-      <div class="exp-row reveal visible">
+
+      <div class="exp-row reveal">
+        <div class="exp-period">
+          <strong>Ecstoria AI Studio</strong>
+          2026 — Present
+        </div>
+        <div class="exp-main">
+          <div class="exp-company">Ecstoria AI Studio</div>
+          <div class="exp-role">UX Design Intern & Graphic Designer</div>
+          <p class="exp-desc">
+            Working at the intersection of AI and design — contributing to user experience strategy, interface design, and visual communication for AI-driven products. Involved in end-to-end UX workflows including user research, wireframing, and prototyping, alongside brand and graphic design deliverables that shape the studio's visual identity across digital and print touchpoints.
+          </p>
+        </div>
+      </div>
+
+      <div class="exp-row reveal reveal-delay-1">
         <div class="exp-period">
           <strong>Rather Old Company</strong>
           2024 — 2025
         </div>
         <div class="exp-main">
           <div class="exp-company">Rather Old Company</div>
-          <div class="exp-role">Graphic Designer &amp; Video Editor</div>
+          <div class="exp-role">Graphic Designer & Video Editor</div>
           <p class="exp-desc">
             Led visual design and video production for client campaigns, brand collateral, and digital content across print and social formats. Managed multiple simultaneous projects under real deadline pressure — building the project management instincts and client communication skills that now inform how I approach UX briefs. Responsible for end-to-end delivery from brief to final asset.
           </p>
         </div>
       </div>
 
-      <div class="exp-row reveal reveal-delay-1 visible">
+      <div class="exp-row reveal reveal-delay-2">
         <div class="exp-period">
           <strong>Sprouts Enterprises</strong>
           2023 — 2024
         </div>
         <div class="exp-main">
           <div class="exp-company">Sprouts Enterprises</div>
-          <div class="exp-role">Junior Graphic Designer &amp; Video Editor</div>
+          <div class="exp-role">Junior Graphic Designer & Video Editor</div>
           <p class="exp-desc">
             Designed the company's complete visual identity from the ground up — including logo, website, in-store display boards, promotional posters, and print materials. First time taking full ownership of a brand system across every touchpoint. Also handled video production for social media channels from scripting to final edit. The Sprouts website and brand identity remain live and in active use.
           </p>
@@ -1413,20 +1427,20 @@ footer {
 <!-- ══════════ CERTIFICATIONS ══════════ -->
 <section id="certs" class="section" style="padding-top:0;">
   <div class="section-inner">
-    <div class="section-header reveal visible" style="margin-bottom:0;">
+    <div class="section-header reveal" style="margin-bottom:0;">
       <span class="section-eyebrow">Certifications</span>
       <span class="section-count">3 Credentials</span>
     </div>
     <div class="certs-grid">
-      <div class="cert-card reveal visible">
+      <div class="cert-card reveal">
         <div class="cert-platform">edX</div>
         <div class="cert-name">UX/UI Design Fundamentals</div>
       </div>
-      <div class="cert-card reveal reveal-delay-1 visible">
+      <div class="cert-card reveal reveal-delay-1">
         <div class="cert-platform">Skillshare</div>
         <div class="cert-name">Learn Figma — UI UX Design Essentials</div>
       </div>
-      <div class="cert-card reveal reveal-delay-2 visible">
+      <div class="cert-card reveal reveal-delay-2">
         <div class="cert-platform">Tutsnode</div>
         <div class="cert-name">Figma for UI/UX — Master Web Design in Figma</div>
       </div>
@@ -1438,16 +1452,16 @@ footer {
 <!-- ══════════ CONTACT ══════════ -->
 <section id="contact">
   <div class="contact-inner">
-    <div class="contact-left reveal visible">
+    <div class="contact-left reveal">
       <div class="contact-label">Let's Work Together</div>
       <h2 class="contact-title">
-        Available for<br>full-time roles<br>&amp; freelance work.
+        Available for<br>full-time roles<br>& freelance work.
       </h2>
       <p class="contact-sub">
         If you're looking for a designer who asks questions before opening Figma, cares about the person on the other side of the screen, and brings both graphic design craft and UX rigour to every project — I'd like to hear from you.
       </p>
     </div>
-    <div class="contact-right reveal reveal-delay-2 visible">
+    <div class="contact-right reveal reveal-delay-2">
       <a href="mailto:mridulmadhu02@gmail.com" class="contact-email">
         mridulmadhu02@gmail.com
       </a>
@@ -1467,9 +1481,9 @@ footer {
     <div class="footer-logo">Mridul<span>.</span></div>
     <div class="footer-copy">© 2025 Mridul Madhu · All rights reserved</div>
     <div class="footer-links">
-      <a href="file:///C:/Users/midhu/Downloads/mridul-portfolio-website.html#work" class="footer-link">Work</a>
-      <a href="file:///C:/Users/midhu/Downloads/mridul-portfolio-website.html#about" class="footer-link">About</a>
-      <a href="file:///C:/Users/midhu/Downloads/mridul-portfolio-website.html#contact" class="footer-link">Contact</a>
+      <a href="#work"    class="footer-link">Work</a>
+      <a href="#about"   class="footer-link">About</a>
+      <a href="#contact" class="footer-link">Contact</a>
     </div>
   </div>
 </footer>
@@ -1534,6 +1548,5 @@ document.querySelectorAll('.project-row').forEach(row => {
 });
 </script>
 
-
-
-</body></html>
+</body>
+</html>
