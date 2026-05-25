@@ -10,8 +10,8 @@
 
 <style>
 /* ═══════════════════════════════════════════════════════════
-   ✦  MRIDUL MADHU — PORTFOLIO DESIGN FILE
-   ✦  Framer Reference · All content ready to use
+     MRIDUL MADHU — PORTFOLIO DESIGN FILE
+     Framer Reference · All content ready to use
    ═══════════════════════════════════════════════════════════
 
    ┌─────────────────────────────────────────────────────────┐
@@ -36,7 +36,7 @@
   --dark:      #0E0E0E;   /* dark section background */
   --dark-2:    #161616;   /* slightly lighter dark */
   --dark-3:    #1E1E1E;   /* card/row dark */
-  --accent:    #8B1A1A;   /* ★ BRAND COLOR — change this! */
+  --accent:    #8B1A1A;   /*  BRAND COLOR — change this! */
   --accent-hi: #A82020;   /* accent hover/highlight */
   --text:      #111111;   /* primary text */
   --text-mid:  #505050;   /* body text */
@@ -558,6 +558,428 @@ nav.scrolled {
   text-align: right;
 }
 
+/* ── PROJECT DRAWER ──────────────────────────────────────── */
+.project-drawer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.58s cubic-bezier(0, 0, 0.2, 1);
+  background: var(--dark-2);
+  position: relative;
+}
+.project-drawer.open { grid-template-rows: 1fr; }
+.project-drawer-inner { overflow: hidden; }
+.drawer-body {
+  padding: 64px var(--pad-x) 72px;
+  border-top: 1px solid var(--rule-dark);
+  border-bottom: 1px solid var(--rule-dark);
+  position: relative;
+}
+.drawer-watermark {
+  font-family: var(--font-display);
+  font-size: 180px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.025);
+  line-height: 1;
+  position: absolute;
+  right: var(--pad-x);
+  top: 20px;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -8px;
+}
+.drawer-inner { max-width: var(--max-w); margin: 0 auto; }
+.drawer-top {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 32px;
+  margin-bottom: 48px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--rule-dark);
+}
+.drawer-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 38px);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+.drawer-title em { font-style: italic; color: var(--accent-hi); }
+.drawer-subtitle {
+  font-size: var(--t-body);
+  color: rgba(255,255,255,0.38);
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 560px;
+}
+.drawer-close {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  cursor: pointer;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 9px 18px;
+  border-radius: 2px;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.drawer-close:hover { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.3); }
+
+/* Stats row */
+.drawer-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-bottom: 48px;
+}
+.drawer-stat {
+  background: rgba(255,255,255,0.03);
+  padding: 22px 20px;
+  text-align: center;
+}
+.drawer-stat-n {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent-hi);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+.drawer-stat-l {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.22);
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+/* Content blocks grid */
+.drawer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-bottom: 48px;
+}
+.drawer-grid-2 { grid-template-columns: 1fr 1fr; }
+.drawer-block {
+  background: rgba(255,255,255,0.03);
+  padding: 26px 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.drawer-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent-hi);
+  margin-bottom: 12px;
+  display: block;
+}
+.drawer-text {
+  font-size: var(--t-small);
+  color: rgba(255,255,255,0.45);
+  line-height: 1.8;
+  font-weight: 300;
+}
+.drawer-text strong {
+  font-weight: 600;
+  color: rgba(255,255,255,0.78);
+  display: block;
+  margin-bottom: 5px;
+}
+.drawer-text p { margin-bottom: 10px; }
+.drawer-text p:last-child { margin-bottom: 0; }
+
+/* Section subheading */
+.drawer-sh {
+  font-family: var(--font-display);
+  font-size: clamp(17px, 2vw, 22px);
+  font-weight: 700;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: -0.3px;
+  margin-bottom: 18px;
+  margin-top: 44px;
+  padding-top: 44px;
+  border-top: 1px solid var(--rule-dark);
+}
+.drawer-sh em { font-style: italic; color: var(--accent-hi); }
+.drawer-sh:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+
+/* Pull quote */
+.drawer-quote {
+  border-left: 3px solid var(--accent);
+  padding: 20px 28px;
+  margin: 36px 0;
+  background: rgba(139,26,26,0.07);
+}
+.drawer-quote p {
+  font-family: var(--font-display);
+  font-size: clamp(14px, 1.6vw, 18px);
+  font-style: italic;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.65;
+  font-weight: 400;
+  margin: 0;
+}
+.drawer-quote cite {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.2);
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+/* Design decisions list */
+.drawer-decisions { margin: 8px 0; }
+.drawer-decision {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  align-items: start;
+}
+.drawer-decision:last-child { border-bottom: none; }
+.drawer-d-num {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--accent-hi);
+  letter-spacing: 1px;
+  padding-top: 3px;
+}
+.drawer-d-title {
+  font-size: var(--t-body);
+  font-weight: 600;
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 4px;
+}
+.drawer-d-body {
+  font-size: var(--t-small);
+  color: rgba(255,255,255,0.38);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* Personas */
+.drawer-personas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin: 8px 0;
+}
+.drawer-persona {
+  background: rgba(255,255,255,0.03);
+  padding: 24px 22px;
+  border-top: 2px solid var(--accent);
+}
+.drawer-p-role {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--accent-hi);
+  margin-bottom: 8px;
+}
+.drawer-p-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2px;
+}
+.drawer-p-detail {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: rgba(255,255,255,0.22);
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+.drawer-p-bio {
+  font-size: 12px;
+  color: rgba(255,255,255,0.38);
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 12px;
+}
+.drawer-p-quote {
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-style: italic;
+  color: rgba(255,255,255,0.58);
+  border-left: 2px solid var(--accent);
+  padding-left: 10px;
+  line-height: 1.55;
+}
+
+/* Before / After */
+.drawer-ba {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin: 8px 0;
+}
+.drawer-ba-col { padding: 24px; }
+.drawer-ba-col.bc { background: rgba(255,255,255,0.03); }
+.drawer-ba-col.ac { background: rgba(139,26,26,0.07); }
+.drawer-ba-lbl {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: block;
+}
+.bc .drawer-ba-lbl { color: rgba(255,255,255,0.18); }
+.ac .drawer-ba-lbl { color: var(--accent-hi); }
+.drawer-ba-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+  font-weight: 300;
+  align-items: flex-start;
+}
+.ba-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+.bc .ba-dot { background: rgba(255,255,255,0.18); }
+.ac .ba-dot { background: var(--accent); }
+
+/* Insight cards */
+.drawer-insights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin: 8px 0;
+}
+.drawer-insight {
+  background: rgba(255,255,255,0.03);
+  padding: 22px 20px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.drawer-insight-icon {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--accent-hi);
+  margin-bottom: 10px;
+  display: block;
+  text-transform: uppercase;
+}
+.drawer-insight-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.78);
+  margin-bottom: 6px;
+}
+.drawer-insight-body {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.32);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ── MOCKUP IMAGES ───────────────────────────────────────── */
+.drawer-mockup-single {
+  margin: 8px 0 36px;
+}
+.drawer-mockup-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 8px 0 36px;
+}
+.drawer-mockup-item {}
+.drawer-mockup-img-wrap {
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+.drawer-mockup-single .drawer-mockup-img-wrap {
+  max-width: 600px;
+  min-height: 280px;
+}
+.drawer-mockup-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+.drawer-mockup-img-wrap:hover .drawer-mockup-img {
+  transform: scale(1.02);
+}
+.drawer-mockup-caption {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.22);
+  margin-top: 10px;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .drawer-mockup-2col { grid-template-columns: 1fr; }
+}
+
+/* ── CTA link inside drawer ───────────────────────────────── */
+.drawer-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--accent);
+  padding: 13px 28px;
+  border-radius: 2px;
+  margin-top: 36px;
+  transition: background 0.2s;
+}
+.drawer-cta:hover { background: var(--accent-hi); }
+
+@media (max-width: 768px) {
+  .drawer-grid,
+  .drawer-grid-2    { grid-template-columns: 1fr; }
+  .drawer-personas  { grid-template-columns: 1fr; }
+  .drawer-ba        { grid-template-columns: 1fr; }
+  .drawer-stats     { grid-template-columns: 1fr 1fr; }
+  .drawer-insights  { grid-template-columns: 1fr; }
+  .drawer-watermark { display: none; }
+  .drawer-body      { padding: 40px var(--pad-x) 56px; }
+}
+
+.project-row.active-row { background: rgba(139,26,26,0.04); }
+.project-row.active-row::before { width: 3px; }
+.project-row.active-row .proj-title { color: var(--accent); }
+.project-row.active-row .proj-arrow { transform: rotate(45deg); color: var(--accent); opacity: 1; }
+
 /* ── ABOUT ───────────────────────────────────────────────── */
 #about {
   background: var(--bg);
@@ -656,7 +1078,7 @@ nav.scrolled {
   color: rgba(255,255,255,0.2);
 }
 /* 
-  ✦ FRAMER TIP: In Framer, replace this dark box with an
+   FRAMER TIP: In Framer, replace this dark box with an
     Image component (set to "Fill" fit mode) and upload
     your headshot photo here.
 */
@@ -759,6 +1181,81 @@ nav.scrolled {
   transition: transform 1s 0.3s var(--ease-out);
 }
 .skill-block:hover .skill-fill { transform: scaleX(1); }
+
+/* ── BRANDS ──────────────────────────────────────────────── */
+.brands-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  margin-top: 48px;
+  padding: 40px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  flex-wrap: wrap;
+}
+.brand-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 120px;
+}
+.brand-logo-wrap {
+  width: 120px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand-logo {
+  max-width: 120px;
+  max-height: 48px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%) contrast(0.7);
+  opacity: 0.6;
+  transition: filter 0.3s, opacity 0.3s;
+}
+.brand-item:hover .brand-logo {
+  filter: grayscale(0%) contrast(1);
+  opacity: 1;
+}
+.brand-logo-fallback {
+  width: 120px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--text-mute);
+  text-transform: uppercase;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+}
+.brand-name {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  text-align: center;
+  line-height: 1.4;
+}
+.brand-sep {
+  width: 1px;
+  height: 40px;
+  background: var(--rule);
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .brands-strip { gap: 24px; justify-content: center; }
+  .brand-sep { display: none; }
+}
 
 /* ── EXPERIENCE ──────────────────────────────────────────── */
 #experience { background: var(--bg-white); }
@@ -1011,7 +1508,7 @@ footer {
 
 /* ── FRAMER ANNOTATION LAYER ─────────────────────────────── */
 /* 
-  ✦ FRAMER BUILD GUIDE
+   FRAMER BUILD GUIDE
   ════════════════════
   SECTION 1 (Nav)       → Framer: "Navigation" component, sticky
   SECTION 2 (Hero)      → Framer: Full-viewport Frame, dark bg
@@ -1072,6 +1569,7 @@ footer {
     <div class="nav-links">
       <a href="#work"       class="nav-link">Work</a>
       <a href="#about"      class="nav-link">About</a>
+      <a href="#brands"     class="nav-link">Brands</a>
       <a href="#experience" class="nav-link">Experience</a>
       <a href="#contact"    class="nav-link">Contact</a>
     </div>
@@ -1136,11 +1634,11 @@ footer {
     </div>
   </div>
 
-  <!-- PROJECT ROWS — full bleed to mimic Stelvio layout -->
+  <!-- PROJECT ROWS + INLINE DRAWERS -->
   <div style="max-width:var(--max-w);margin:0 auto;">
 
-    <!-- 01 — KTET MASTER -->
-    <div class="project-row reveal reveal-delay-1">
+    <!-- ── 01 KTET MASTER ── -->
+    <div class="project-row reveal reveal-delay-1" data-drawer="ktet">
       <div class="proj-num"><em>01</em></div>
       <div class="proj-body">
         <div class="proj-tags">
@@ -1149,9 +1647,7 @@ footer {
           <span class="proj-tag">Education</span>
         </div>
         <h3 class="proj-title">KTET Master — The Quizmaster App</h3>
-        <p class="proj-desc">
-          An end-to-end UX case study for a personalised learning app built for Kerala teachers preparing for the mandatory KTET exam. Primary research with 20 users, personas, design thinking framework, lo-fi sketches to interactive Figma prototype. App launch targeted for 2026.
-        </p>
+        <p class="proj-desc">An end-to-end UX case study for a personalised learning app built for Kerala teachers preparing for the mandatory KTET exam. Primary research with 20 users, personas, design thinking framework, lo-fi sketches to interactive Figma prototype. App launch targeted for 2026.</p>
       </div>
       <div class="proj-meta">
         <div class="proj-year">2024–25</div>
@@ -1160,8 +1656,149 @@ footer {
       </div>
     </div>
 
-    <!-- 02 — AMAZON PRIME -->
-    <div class="project-row reveal reveal-delay-1">
+    <div class="project-drawer" id="drawer-ktet">
+      <div class="project-drawer-inner">
+        <div class="drawer-body">
+          <div class="drawer-watermark">01</div>
+          <div class="drawer-inner">
+
+            <div class="drawer-top">
+              <div>
+                <div class="drawer-title">KTET Master — <em>The Quizmaster App</em></div>
+                <div class="drawer-subtitle">A personalised learning app designed from the ground up for Kerala government school teachers — built on primary research with 20 users across three age groups, from 19 to 56.</div>
+              </div>
+              <button class="drawer-close" data-close="ktet"> &nbsp;Close</button>
+            </div>
+
+            <div class="drawer-stats">
+              <div class="drawer-stat"><div class="drawer-stat-n">20</div><div class="drawer-stat-l">Teachers Interviewed</div></div>
+              <div class="drawer-stat"><div class="drawer-stat-n">3</div><div class="drawer-stat-l">Personas Created</div></div>
+              <div class="drawer-stat"><div class="drawer-stat-n">6wk</div><div class="drawer-stat-l">Design Sprint</div></div>
+              <div class="drawer-stat"><div class="drawer-stat-n">2026</div><div class="drawer-stat-l">Launch Target</div></div>
+            </div>
+
+            <div class="drawer-sh">The Origin &amp; <em>Problem</em></div>
+            <div class="drawer-grid">
+              <div class="drawer-block">
+                <span class="drawer-label">How It Started</span>
+                <div class="drawer-text"><p>It started over tea. My mother is a government high school teacher with over two decades in the classroom. She mentioned that the Kerala government had made KTET mandatory for all teachers — for promotions, service extensions, even for experienced educators with thirty years of experience.</p><p>There was almost nothing to help them prepare. Not a single dedicated app. That was the brief I gave myself.</p></div>
+              </div>
+              <div class="drawer-block">
+                <span class="drawer-label">The Opportunity</span>
+                <div class="drawer-text"><p>KTET is a demanding exam covering pedagogy, child psychology, and subject knowledge. But the users who need to pass it aren't students — they're professionals managing full classrooms, households, and careers simultaneously.</p><p>Existing options — books, YouTube, offline tutors — were designed for a different kind of learner. None of it fit into a working teacher's day.</p></div>
+              </div>
+              <div class="drawer-block">
+                <span class="drawer-label">Competition</span>
+                <div class="drawer-text"><strong>No direct competition.</strong><p>No dedicated app existed for KTET preparation. Indirect alternatives included general study books, YouTube videos, and online tutors — none optimised for short, consistent daily sessions or for users aged 19–56.</p><p>This gap was the opportunity.</p></div>
+              </div>
+            </div>
+
+            <div class="drawer-quote">
+              <p>"There is no proper system to make the learning simple and personalised for these teachers. They need something quick — something they can do in short intervals of time."</p>
+              <cite>— Problem Statement, KTET Master Research</cite>
+            </div>
+
+            <div class="drawer-sh"><em>User Research</em> — What I Found</div>
+            <div class="drawer-grid">
+              <div class="drawer-block">
+                <span class="drawer-label">Methodology</span>
+                <div class="drawer-text"><p>Collected primary data from 20 teachers personally — B.Ed. students, mid-career government school teachers, and senior educators near retirement. I conducted the interviews myself, not through proxies, using a structured Google Forms questionnaire.</p></div>
+              </div>
+              <div class="drawer-block">
+                <span class="drawer-label">Key Findings</span>
+                <div class="drawer-text"><p>All participants needed something <strong>quick and bite-sized</strong> — usable in 20-minute windows. They wanted instant feedback on wrong answers, visible progress, and bilingual support (English + Malayalam). Motivation and consistency were the biggest barriers, not ability.</p></div>
+              </div>
+              <div class="drawer-block">
+                <span class="drawer-label">The Unexpected Challenge</span>
+                <div class="drawer-text"><p>The exam is recent so study material is genuinely scarce. I ended up manually sourcing past question papers and building the question bank from scratch — which forced me to understand the content deeply and made my design decisions sharper.</p></div>
+              </div>
+            </div>
+
+            <div class="drawer-sh">User <em>Personas</em></div>
+            <div class="drawer-personas">
+              <div class="drawer-persona">
+                <div class="drawer-p-role">Persona 01</div>
+                <div class="drawer-p-name">Sreekesh</div>
+                <div class="drawer-p-detail">B.Ed. Student · 23 · Palakkad</div>
+                <div class="drawer-p-bio">Finishing his teaching degree, needs KTET just to start his career. Study time is fragmented across coursework, teaching practice, and projects.</div>
+                <div class="drawer-p-quote">"A quick quiz app would save time — I could use it on the bus."</div>
+              </div>
+              <div class="drawer-persona">
+                <div class="drawer-p-role">Persona 02</div>
+                <div class="drawer-p-name">Anitha</div>
+                <div class="drawer-p-detail">Junior UP Teacher · 34 · Ernakulam</div>
+                <div class="drawer-p-bio">Government school teacher raising two young kids, navigating career and family simultaneously. Motivated but severely time-poor.</div>
+                <div class="drawer-p-quote">"An option to try mock exams quickly during free time would be a lifesaver."</div>
+              </div>
+              <div class="drawer-persona">
+                <div class="drawer-p-role">Persona 03</div>
+                <div class="drawer-p-name">Geetha PC</div>
+                <div class="drawer-p-detail">Senior HS Teacher · 54 · Palakkad</div>
+                <div class="drawer-p-bio">30+ years experience, Deputy Headmistress. Needs KTET for promotion. Wants a tool that respects her intelligence and doesn't waste her time.</div>
+                <div class="drawer-p-quote">"An app with a proper question bank would help so much. I need structure."</div>
+              </div>
+            </div>
+
+            <div class="drawer-sh">Key <em>Design Decisions</em></div>
+            <div class="drawer-decisions">
+              <div class="drawer-decision">
+                <div class="drawer-d-num">D.01</div>
+                <div><div class="drawer-d-title">Minimal layout designed for age 19 to 56</div><div class="drawer-d-body">Clear hierarchy, generous touch targets, no experimental navigation. If a 54-year-old Deputy Headmistress can navigate it intuitively in a free period, it works.</div></div>
+              </div>
+              <div class="drawer-decision">
+                <div class="drawer-d-num">D.02</div>
+                <div><div class="drawer-d-title">Bilingual support — English and Malayalam from day one</div><div class="drawer-d-body">Assuming all users are comfortable in English was a design failure waiting to happen. The language toggle is built into the core flow, not buried in settings.</div></div>
+              </div>
+              <div class="drawer-decision">
+                <div class="drawer-d-num">D.03</div>
+                <div><div class="drawer-d-title">Immediate feedback on wrong answers</div><div class="drawer-d-body">Wrong answers highlighted in red, correct answer shown immediately. Learning happens at the moment of error — not in a review screen after ten questions.</div></div>
+              </div>
+              <div class="drawer-decision">
+                <div class="drawer-d-num">D.04</div>
+                <div><div class="drawer-d-title">Streak and XP mechanics grounded in motivation research</div><div class="drawer-d-body">Added not because gamification is trendy, but because research showed teachers needed a reason to return consistently. Progress streaks reward persistence without making it feel like a children's app.</div></div>
+              </div>
+              <div class="drawer-decision">
+                <div class="drawer-d-num">D.05</div>
+                <div><div class="drawer-d-title">The "Master" character as a companion, not a mascot</div><div class="drawer-d-body">The animated teacher character reacts to right answers, wrong answers, and streaks. This was a direct response to research showing users wanted to feel encouraged — not just assessed.</div></div>
+              </div>
+            </div>
+
+            <div class="drawer-quote">
+              <p>"The best UX solution isn't always the most sophisticated one. Sometimes it's the one that fits inside a twenty-minute tea break."</p>
+              <cite>— Key Learning, KTET Master Project</cite>
+            </div>
+
+            <div class="drawer-sh">Design <em>Process — Lo-Fi to Hi-Fi</em></div>
+            <div class="drawer-mockup-2col">
+              <div class="drawer-mockup-item">
+                <div class="drawer-mockup-img-wrap">
+                  <img src="lofi design.png"
+                       alt="KTET Master Lo-Fi Sketches"
+                       class="drawer-mockup-img"
+                       onerror="this.parentElement.style.background='rgba(255,255,255,0.04)';this.style.display='none';">
+                </div>
+                <div class="drawer-mockup-caption">Lo-Fi Design Sketches — Early Wireframes</div>
+              </div>
+              <div class="drawer-mockup-item">
+                <div class="drawer-mockup-img-wrap">
+                  <img src="ktet mockup.png"
+                       alt="KTET Master Hi-Fi Mockup"
+                       class="drawer-mockup-img"
+                       onerror="this.parentElement.style.background='rgba(255,255,255,0.04)';this.style.display='none';">
+                </div>
+                <div class="drawer-mockup-caption">Hi-Fi Prototype Mockup — Final Design</div>
+              </div>
+            </div>
+
+            <a href="https://www.figma.com/proto/SMgQVD0CTIqbDdyR0NH4Aa/Quiz-App?node-id=1-19&t=r0SjF4QA9H3Fz0el-1&starting-point-node-id=1%3A3" target="_blank" class="drawer-cta">View Figma Prototype ↗</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 02 AMAZON PRIME ── -->
+    <div class="project-row reveal reveal-delay-1" data-drawer="prime">
       <div class="proj-num"><em>02</em></div>
       <div class="proj-body">
         <div class="proj-tags">
@@ -1170,9 +1807,7 @@ footer {
           <span class="proj-tag">Mobile + PC</span>
         </div>
         <h3 class="proj-title">Amazon Prime Video — App Redesign</h3>
-        <p class="proj-desc">
-          A research-led redesign of the Prime Video platform based on interviews with 15 active users. Tackled home screen discovery, the video player interface (both mobile and desktop), and the X-Ray feature — while keeping brand identity and core features entirely intact.
-        </p>
+        <p class="proj-desc">A research-led redesign of the Prime Video platform based on interviews with 15 active users. Tackled home screen discovery, the video player interface (both mobile and desktop), and the X-Ray feature — while keeping brand identity and core features entirely intact.</p>
       </div>
       <div class="proj-meta">
         <div class="proj-year">2024</div>
@@ -1181,8 +1816,121 @@ footer {
       </div>
     </div>
 
-    <!-- 03 — SPROUTS -->
-    <div class="project-row reveal reveal-delay-2">
+    <div class="project-drawer" id="drawer-prime">
+      <div class="project-drawer-inner">
+        <div class="drawer-body">
+          <div class="drawer-watermark">02</div>
+          <div class="drawer-inner">
+
+            <div class="drawer-top">
+              <div>
+                <div class="drawer-title">Amazon Prime Video — <em>Redesign</em></div>
+                <div class="drawer-subtitle">A research-led redesign based on 15 user interviews. The brief was clear: reduce friction, improve discovery, and make watching a film the smooth experience it should be — without touching the brand.</div>
+              </div>
+              <button class="drawer-close" data-close="prime"> &nbsp;Close</button>
+            </div>
+
+            <div class="drawer-stats">
+              <div class="drawer-stat"><div class="drawer-stat-n">15</div><div class="drawer-stat-l">Users Interviewed</div></div>
+              <div class="drawer-stat"><div class="drawer-stat-n">2</div><div class="drawer-stat-l">Platforms Redesigned</div></div>
+              <div class="drawer-stat"><div class="drawer-stat-n">3wk</div><div class="drawer-stat-l">Sprint Duration</div></div>
+              <div class="drawer-stat"><div class="drawer-stat-n">5</div><div class="drawer-stat-l">Core Fixes Made</div></div>
+            </div>
+
+            <div class="drawer-sh">Why This <em>Existed</em></div>
+            <div class="drawer-grid">
+              <div class="drawer-block">
+                <span class="drawer-label">Personal Motivation</span>
+                <div class="drawer-text"><p>I'm a cinephile. Amazon Prime Video has some of the best regional and international content in India. It also has one of the most frustrating interfaces I regularly encounter. I stopped complaining and started researching.</p></div>
+              </div>
+              <div class="drawer-block">
+                <span class="drawer-label">The Constraint</span>
+                <div class="drawer-text"><strong>Brand identity stays intact.</strong><p>Prime Video's deep blue, the smile logo, the subscription model, the content catalogue — none of that was on the table. This was a UX intervention, not a rebrand. The goal was to reduce friction, not redesign the product.</p></div>
+              </div>
+              <div class="drawer-block">
+                <span class="drawer-label">The Stakes</span>
+                <div class="drawer-text"><p>One participant had cancelled their subscription entirely — not because of the content library, but because of the interface. That detail made the stakes of the redesign concrete: poor UX has real business consequences.</p></div>
+              </div>
+            </div>
+
+            <div class="drawer-sh">Research <em>Findings</em></div>
+            <div class="drawer-insights">
+              <div class="drawer-insight">
+                <span class="drawer-insight-icon">01</span>
+                <div class="drawer-insight-title">Discovery is broken</div>
+                <div class="drawer-insight-body">Users consistently described the home screen as overwhelming and impersonal. Suggestions felt random. Finding a film to watch took significantly longer than it should — and many users gave up.</div>
+              </div>
+              <div class="drawer-insight">
+                <span class="drawer-insight-icon">02</span>
+                <div class="drawer-insight-title">X-Ray is intrusive by default</div>
+                <div class="drawer-insight-body">X-Ray — Prime's cast and trivia overlay — was designed as a feature but users experienced it as an interruption during viewing. Most wanted to opt in, not opt out.</div>
+              </div>
+              <div class="drawer-insight">
+                <span class="drawer-insight-icon">03</span>
+                <div class="drawer-insight-title">Player controls fight instinct</div>
+                <div class="drawer-insight-body">Controls were scattered. The 10-second skip button conflicted with how users naturally interact on phones and laptops. Multiple users had developed personal workarounds.</div>
+              </div>
+            </div>
+
+            <div class="drawer-sh">Redesign <em>Mockup</em></div>
+            <div class="drawer-mockup-single">
+              <div class="drawer-mockup-img-wrap">
+                <img src="Prime Mockup.png"
+                     alt="Amazon Prime Video Redesign Mockup"
+                     class="drawer-mockup-img"
+                     onerror="this.parentElement.style.background='rgba(255,255,255,0.04)';this.style.display='none';">
+              </div>
+              <div class="drawer-mockup-caption">Prime Video — Player &amp; Home Screen Redesign</div>
+            </div>
+
+            <div class="drawer-sh">Home Screen — <em>Before &amp; After</em></div>
+            <div class="drawer-ba">
+              <div class="drawer-ba-col bc">
+                <span class="drawer-ba-lbl">Before</span>
+                <div class="drawer-ba-item"><div class="ba-dot"></div>Hero banner dominates — promotes content you may not want</div>
+                <div class="drawer-ba-item"><div class="ba-dot"></div>"Continue Watching" buried below multiple promo rows</div>
+                <div class="drawer-ba-item"><div class="ba-dot"></div>Additional-subscription content mixed in without clear labelling</div>
+                <div class="drawer-ba-item"><div class="ba-dot"></div>Suggestion rows feel identical — no personalisation signal</div>
+              </div>
+              <div class="drawer-ba-col ac">
+                <span class="drawer-ba-lbl">After</span>
+                <div class="drawer-ba-item"><div class="ba-dot"></div>"Continue Watching" moved to top — returning users find it immediately</div>
+                <div class="drawer-ba-item"><div class="ba-dot"></div>Hero banner stays but becomes smarter — clearer subscription disclosure</div>
+                <div class="drawer-ba-item"><div class="ba-dot"></div>Rows labelled with clearer intent: "Because you watched", "New in your languages"</div>
+                <div class="drawer-ba-item"><div class="ba-dot"></div>Structure prioritises the user's current session over the platform's agenda</div>
+              </div>
+            </div>
+
+            <div class="drawer-sh">Player Redesign — <em>PC &amp; Mobile</em></div>
+            <div class="drawer-grid drawer-grid-2">
+              <div class="drawer-block">
+                <span class="drawer-label">PC Player</span>
+                <div class="drawer-text">
+                  <p>All controls moved to the bottom (where eyes naturally rest). The 10-second skip became a double-click gesture. Speed and audio options grouped into a single expandable icon. X-Ray demoted from default overlay to opt-in info button. Hovering controls — appear when needed, disappear when not.</p>
+                </div>
+              </div>
+              <div class="drawer-block">
+                <span class="drawer-label">Mobile Player</span>
+                <div class="drawer-text">
+                  <p>Swipe up/down on the left side controls brightness. Same gesture on the right controls volume — a pattern users already know from YouTube. Double-tap anywhere seeks 10 seconds. A screen lock button prevents accidental pauses when the phone tilts.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="drawer-quote">
+              <p>"Sometimes good design is invisible. The best version of this redesign is one where users don't notice anything changed — they just stop getting frustrated."</p>
+              <cite>— Key Insight, Amazon Prime Redesign</cite>
+            </div>
+
+            <a href="#" class="drawer-cta">View Full Case Study ↗</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 03 SPROUTS ── -->
+    <div class="project-row reveal reveal-delay-2" data-drawer="sprouts">
       <div class="proj-num"><em>03</em></div>
       <div class="proj-body">
         <div class="proj-tags">
@@ -1191,9 +1939,7 @@ footer {
           <span class="proj-tag">Real Client</span>
         </div>
         <h3 class="proj-title">Sprouts Enterprises — Brand Identity & Website</h3>
-        <p class="proj-desc">
-          Complete visual identity and website for a Kerala irrigation technology company. Designed for farmers as the primary user — radical clarity, minimal navigation, direct quote-request flow. Deliverables included logo, full website, in-store boards, promotional posters and print materials.
-        </p>
+        <p class="proj-desc">Complete visual identity and website for a Kerala irrigation technology company. Designed for farmers as the primary user — radical clarity, minimal navigation, direct quote-request flow. Deliverables included logo, full website, in-store boards, promotional posters and print materials.</p>
       </div>
       <div class="proj-meta">
         <div class="proj-year">2023</div>
@@ -1202,8 +1948,77 @@ footer {
       </div>
     </div>
 
-    <!-- 04 — NFT RESEARCH -->
-    <div class="project-row reveal reveal-delay-3" style="border-bottom:none;">
+    <div class="project-drawer" id="drawer-sprouts">
+      <div class="project-drawer-inner">
+        <div class="drawer-body">
+          <div class="drawer-watermark">03</div>
+          <div class="drawer-inner">
+
+            <div class="drawer-top">
+              <div>
+                <div class="drawer-title">Sprouts Enterprises — <em>Brand &amp; Website</em></div>
+                <div class="drawer-subtitle">My first full client engagement — real brief, real deadline, real users. Complete visual identity and website for a Kerala irrigation technology company, designed with farmers as the primary user.</div>
+              </div>
+              <button class="drawer-close" data-close="sprouts"> &nbsp;Close</button>
+            </div>
+
+            <div class="drawer-stats">
+              <div class="drawer-stat"><div class="drawer-stat-n">1</div><div class="drawer-stat-l">Real Client</div></div>
+              <div class="drawer-stat"><div class="drawer-stat-n">Full</div><div class="drawer-stat-l">Brand System</div></div>
+              <div class="drawer-stat"><div class="drawer-stat-n">Live</div><div class="drawer-stat-l">Still Active</div></div>
+              <div class="drawer-stat"><div class="drawer-stat-n">2023</div><div class="drawer-stat-l">Delivered</div></div>
+            </div>
+
+            <div class="drawer-sh">Understanding the <em>User</em></div>
+            <div class="drawer-grid">
+              <div class="drawer-block">
+                <span class="drawer-label">Who Uses This</span>
+                <div class="drawer-text"><p>The primary audience was farmers — many accessing the internet on a basic Android phone, sometimes in poor connectivity, sometimes for the first time. Not tech-savvy investors. Not startup enthusiasts. Farmers.</p><p>That single insight changed almost every design decision I made.</p></div>
+              </div>
+              <div class="drawer-block">
+                <span class="drawer-label">The Design Filter</span>
+                <div class="drawer-text"><p>Every choice was filtered through one question: will a farmer in his forties, standing in a field, looking at this on a mid-range Android phone, <strong>immediately understand what this company does and how to reach them?</strong></p><p>Fancy animations, dense content, multi-level navigation — all eliminated.</p></div>
+              </div>
+              <div class="drawer-block">
+                <span class="drawer-label">Client Requirements</span>
+                <div class="drawer-text"><p>Four things the client needed: every service clearly explained, photos and videos of real work, a direct quote request form (no phone call required), and a brand that feels professional across every touchpoint — website, print, and in-store.</p></div>
+              </div>
+            </div>
+
+            <div class="drawer-sh">What Was <em>Delivered</em></div>
+            <div class="drawer-decisions">
+              <div class="drawer-decision">
+                <div class="drawer-d-num">01</div>
+                <div><div class="drawer-d-title">Logo — Water, growth, and reliability</div><div class="drawer-d-body">The mark integrates a sprouting plant with a subtle water reference. Clean, recognisable, and scalable from a favicon to a 6-foot printed banner.</div></div>
+              </div>
+              <div class="drawer-decision">
+                <div class="drawer-d-num">02</div>
+                <div><div class="drawer-d-title">Website — Minimal navigation, direct conversion flow</div><div class="drawer-d-body">Homepage leads with a full-bleed aerial shot of irrigated farmland. Navigation: Home, About, Services, Team, Contact — no dropdowns, no hidden menus. A direct quote form eliminates the friction of finding and dialling a number.</div></div>
+              </div>
+              <div class="drawer-decision">
+                <div class="drawer-d-num">03</div>
+                <div><div class="drawer-d-title">Print system — In-store boards, posters, flyers</div><div class="drawer-d-body">Every touchpoint uses the same typography, colour palette, and layout language. A farmer seeing a Sprouts flyer at an agri-supply shop should immediately recognise the same brand from the website.</div></div>
+              </div>
+              <div class="drawer-decision">
+                <div class="drawer-d-num">04</div>
+                <div><div class="drawer-d-title">Consistency as trust</div><div class="drawer-d-body">For a company serving farmers, trust is everything. Consistency across website, print, and in-store materials communicates that Sprouts is a professional, reliable operation — which directly supports how they win business.</div></div>
+              </div>
+            </div>
+
+            <div class="drawer-quote">
+              <p>"Working with a real client means navigating real constraints. That responsibility sharpens your thinking considerably."</p>
+              <cite>— Reflection, Sprouts Enterprises Project</cite>
+            </div>
+
+            <a href="https://www.sproutsenterprises.com/" target="_blank" class="drawer-cta">View Live Website ↗</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 04 NFT RESEARCH ── -->
+    <div class="project-row reveal reveal-delay-3" style="border-bottom:none;" data-drawer="nft">
       <div class="proj-num"><em>04</em></div>
       <div class="proj-body">
         <div class="proj-tags">
@@ -1212,14 +2027,90 @@ footer {
           <span class="proj-tag">Undergrad Project</span>
         </div>
         <h3 class="proj-title">NFT Investment — Investor Attitude & Perception Study</h3>
-        <p class="proj-desc">
-          A formal research study into how investors and NFT artists perceive NFTs as a financial instrument. Questionnaire design, primary data collection, statistical analysis and data visualisation. Built the rigorous research instincts that now underpin every UX project.
-        </p>
+        <p class="proj-desc">A formal research study into how investors and NFT artists perceive NFTs as a financial instrument. Questionnaire design, primary data collection, statistical analysis and data visualisation. Built the rigorous research instincts that now underpin every UX project.</p>
       </div>
       <div class="proj-meta">
         <div class="proj-year">2022</div>
         <div class="proj-duration">Research</div>
         <span class="proj-arrow">↗</span>
+      </div>
+    </div>
+
+    <div class="project-drawer" id="drawer-nft">
+      <div class="project-drawer-inner">
+        <div class="drawer-body">
+          <div class="drawer-watermark">04</div>
+          <div class="drawer-inner">
+
+            <div class="drawer-top">
+              <div>
+                <div class="drawer-title">NFT Investment — <em>Research Study</em></div>
+                <div class="drawer-subtitle">A study on investor attitude and perception towards NFT investment. The research skills this project built — questionnaire design, data synthesis, pattern recognition — now underpin every UX project I work on.</div>
+              </div>
+              <button class="drawer-close" data-close="nft"> &nbsp;Close</button>
+            </div>
+
+            <div class="drawer-stats">
+              <div class="drawer-stat"><div class="drawer-stat-n">50+</div><div class="drawer-stat-l">Respondents</div></div>
+              <div class="drawer-stat"><div class="drawer-stat-n">56%</div><div class="drawer-stat-l">OpenSea Users</div></div>
+              <div class="drawer-stat"><div class="drawer-stat-n">1:1</div><div class="drawer-stat-l">Interviews</div></div>
+              <div class="drawer-stat"><div class="drawer-stat-n">2022</div><div class="drawer-stat-l">Undergrad Major</div></div>
+            </div>
+
+            <div class="drawer-sh">Context &amp; <em>Methodology</em></div>
+            <div class="drawer-grid">
+              <div class="drawer-block">
+                <span class="drawer-label">Background</span>
+                <div class="drawer-text"><p>My undergraduate major was Commerce with a specialisation in Finance. For my final-year project, I chose to research NFTs — simultaneously confusing half the world and captivating the other half. The formal title: <em>A Study on Investors' Attitude and Perception Towards NFT Investment.</em></p></div>
+              </div>
+              <div class="drawer-block">
+                <span class="drawer-label">Research Method</span>
+                <div class="drawer-text"><p>A structured questionnaire distributed to NFT artists and investors through online communities and direct outreach. Primary data collected, cleaned, and analysed statistically. Findings visualised through charts and compiled into a formal written report.</p></div>
+              </div>
+              <div class="drawer-block">
+                <span class="drawer-label">The Hard Part</span>
+                <div class="drawer-text"><p>Finding the right participants was harder than the research itself. NFT users were scattered across Discord servers and crypto communities. Many participants had bought NFTs as collectibles, not investments — which required more careful questionnaire design to surface useful data.</p></div>
+              </div>
+            </div>
+
+            <div class="drawer-sh">Key <em>Findings</em></div>
+            <div class="drawer-insights">
+              <div class="drawer-insight">
+                <span class="drawer-insight-icon">01</span>
+                <div class="drawer-insight-title">Collectibles over investments</div>
+                <div class="drawer-insight-body">The majority of respondents were buying NFTs for aesthetic or cultural value, not financial return. The emotional driver was ownership of something unique — not portfolio diversification.</div>
+              </div>
+              <div class="drawer-insight">
+                <span class="drawer-insight-icon">02</span>
+                <div class="drawer-insight-title">Risk awareness was low</div>
+                <div class="drawer-insight-body">Most participants had limited awareness of the financial risks involved. Many couldn't distinguish the difference between platforms or articulate why they chose OpenSea (56%) over alternatives.</div>
+              </div>
+              <div class="drawer-insight">
+                <span class="drawer-insight-icon">03</span>
+                <div class="drawer-insight-title">Physical assets still win</div>
+                <div class="drawer-insight-body">Compared directly with gold, real estate, or equities, interest in NFTs as a long-term investment vehicle was notably lower — even among active NFT buyers.</div>
+              </div>
+            </div>
+
+            <div class="drawer-sh">The <em>UX Connection</em></div>
+            <div class="drawer-grid drawer-grid-2">
+              <div class="drawer-block">
+                <span class="drawer-label">What This Taught Me</span>
+                <div class="drawer-text"><p>User research and financial research require the same core skill: designing questions that elicit honest, useful data — then finding patterns in human behaviour and communicating them clearly to people who weren't in the room.</p><p>This project built those instincts before I knew what to call them.</p></div>
+              </div>
+              <div class="drawer-block">
+                <span class="drawer-label">How It Shows Up in UX</span>
+                <div class="drawer-text"><p>The rigour I developed here — structuring a questionnaire, anticipating participant bias, analysing qualitative data alongside quantitative charts — shows up directly in how I approach user research for every design project.</p><p>It made me a more careful, more thorough researcher.</p></div>
+              </div>
+            </div>
+
+            <div class="drawer-quote">
+              <p>"Analysing how people behave around a product and turning that into a visual story is exactly what UX research does. This project built those instincts before I knew what to call them."</p>
+              <cite>— Reflection, NFT Research Project</cite>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1260,7 +2151,7 @@ footer {
 
       <div class="about-right reveal reveal-delay-2">
         <!-- 
-          ✦ FRAMER: Replace this block with an Image component.
+           FRAMER: Replace this block with an Image component.
             Upload your headshot and set fit mode to "Fill".
         -->
         <div class="about-photo">
@@ -1360,6 +2251,64 @@ footer {
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ══════════ BRANDS ══════════ -->
+<section id="brands" class="section" style="background:var(--bg-white);padding-top:72px;padding-bottom:72px;">
+  <div class="section-inner">
+    <div class="section-header reveal" style="margin-bottom:0;">
+      <span class="section-eyebrow">Brands Collaborated With</span>
+    </div>
+    <div class="brands-strip reveal">
+      <div class="brand-item">
+        <div class="brand-logo-wrap">
+          <img src="CIAL.png" alt="CIAL" class="brand-logo"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="brand-logo-fallback" style="display:none;">CIAL</div>
+        </div>
+        <div class="brand-name">CIAL</div>
+      </div>
+      <div class="brand-sep"></div>
+      <div class="brand-item">
+        <div class="brand-logo-wrap">
+          <img src="CSM.png" alt="Centre Square Mall" class="brand-logo"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="brand-logo-fallback" style="display:none;">CSM</div>
+        </div>
+        <div class="brand-name">Centre Square Mall</div>
+      </div>
+      <div class="brand-sep"></div>
+      <div class="brand-item">
+        <div class="brand-logo-wrap">
+          <img src="Forum.png" alt="Forum Mall" class="brand-logo"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="brand-logo-fallback" style="display:none;">Forum</div>
+        </div>
+        <div class="brand-name">Forum Mall</div>
+      </div>
+      <div class="brand-sep"></div>
+      <div class="brand-item">
+        <div class="brand-logo-wrap">
+          <img src="Candere.png" alt="Candere by Kalyan" class="brand-logo"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="brand-logo-fallback" style="display:none;">Candere</div>
+        </div>
+        <div class="brand-name">Candere by Kalyan</div>
+      </div>
+      <div class="brand-sep"></div>
+      <div class="brand-item">
+        <div class="brand-logo-wrap">
+          <img src="TIGC.png" alt="The Indian Garage Co." class="brand-logo"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="brand-logo-fallback" style="display:none;">TIGC</div>
+        </div>
+        <div class="brand-name">The Indian Garage Co.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1536,15 +2485,69 @@ reveals.forEach(el => observer.observe(el));
 /* ── Skill bar animation on hover ── */
 /* Already handled by CSS :hover + transition */
 
-/* ── Project row link (placeholder) ── */
-/* 
-  ✦ FRAMER TIP: In Framer, make each project row a Link component
-    pointing to a separate case study page (e.g., /work/ktet-master).
-    Each case study page can be a new Framer page with the detailed
-    copy from the Portfolio Copy document.
-*/
-document.querySelectorAll('.project-row').forEach(row => {
-  row.style.cursor = 'pointer';
+/* ── Project Drawer Toggle ── */
+const projectRows    = document.querySelectorAll('.project-row[data-drawer]');
+const drawers        = document.querySelectorAll('.project-drawer');
+const DRAWER_MS      = 620; // must be >= CSS transition (0.58s) + small buffer
+
+function getNavH() {
+  return document.querySelector('.site-nav')?.offsetHeight || 64;
+}
+
+function scrollToRow(row) {
+  const top = row.getBoundingClientRect().top + window.pageYOffset - getNavH() - 12;
+  window.scrollTo({ top, behavior: 'smooth' });
+}
+
+function closeAll() {
+  drawers.forEach(d => d.classList.remove('open'));
+  projectRows.forEach(r => {
+    r.classList.remove('active-row');
+    const a = r.querySelector('.proj-arrow');
+    if (a) a.style.transform = '';
+  });
+}
+
+function openDrawer(key, row) {
+  const drawer = document.getElementById('drawer-' + key);
+  drawer.classList.add('open');
+  row.classList.add('active-row');
+  const arrow = row.querySelector('.proj-arrow');
+  if (arrow) arrow.style.transform = 'rotate(45deg)';
+  // Layout has settled — scroll to exact heading position
+  scrollToRow(row);
+}
+
+projectRows.forEach(row => {
+  row.addEventListener('click', () => {
+    const key     = row.dataset.drawer;
+    const drawer  = document.getElementById('drawer-' + key);
+    const isOpen  = drawer.classList.contains('open');
+    const anyOpen = [...drawers].some(d => d.classList.contains('open'));
+
+    if (isOpen) {
+      // Same row clicked — just close
+      closeAll();
+      return;
+    }
+
+    if (anyOpen) {
+      // A different drawer is open — close it, wait for animation, then open new
+      closeAll();
+      setTimeout(() => openDrawer(key, row), DRAWER_MS);
+    } else {
+      // Nothing open — open immediately and scroll
+      openDrawer(key, row);
+    }
+  });
+});
+
+// Close buttons inside drawers
+document.querySelectorAll('.drawer-close').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    closeAll();
+  });
 });
 </script>
 
